@@ -12,11 +12,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Content',
+            name='Media',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('type', models.CharField(max_length=50)),
-                ('serie', models.CharField(db_column='content_id', max_length=255)),
+                ('content', models.CharField(db_column='content_id', max_length=255)),
                 ('episode_number', models.CharField(db_column='episod_id', max_length=50)),
                 ('hosted_by', models.CharField(db_column='hosting', max_length=50)),
                 ('thumbnail', models.CharField(max_length=50)),
@@ -68,7 +68,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='ImagoInfoContent',
+            name='Content',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('type', models.CharField(max_length=50)),

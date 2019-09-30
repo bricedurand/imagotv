@@ -25,7 +25,7 @@ class ImagoHomeContent(models.Model):
         db_table = 'imago_home_content'
 
 
-class ImagoInfoContent(models.Model):
+class Content(models.Model):
     type = models.CharField(max_length=50)
     env = models.CharField(max_length=50)
     content_id = models.CharField(max_length=50)
@@ -72,13 +72,13 @@ class ImagoInfoCreator(models.Model):
         managed = False
         db_table = 'imago_info_creator'
 
-class Content(models.Model):
+class Media(models.Model):
     class Meta:
         managed = False
         db_table = 'imago_info_video'
 
     type = models.CharField(max_length=50)
-    serie = models.CharField(db_column="content_id", max_length=255)
+    content = models.CharField(db_column="content_id", max_length=255)
     # section_id = models.CharField(max_length=50)
     episode_number = models.CharField(db_column="episod_id", max_length=50)
     hosted_by = models.CharField(db_column="hosting", max_length=50)
@@ -113,6 +113,9 @@ class Content(models.Model):
     documentary_type = models.CharField(max_length=50)
     publication_date = models.DateTimeField()
     fact_check = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
 
 class ImagoListMember(models.Model):
     first_name = models.CharField(max_length=50)
