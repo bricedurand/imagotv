@@ -10,6 +10,8 @@ admin.site.register(Media, MediaAdmin)
 
 class ContentAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'type', 'category')
+    search_fields = ['name']
+    list_filter = ['type', 'category']
 
 admin.site.register(Content, ContentAdmin)
 
