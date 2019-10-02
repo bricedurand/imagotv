@@ -25,7 +25,7 @@ class ImagoHomeContent(models.Model):
         db_table = 'imago_home_content'
 
 
-class Content(models.Model):
+class ImagoInfoContent(models.Model):
     type = models.CharField(max_length=50)
     env = models.CharField(max_length=50)
     content_id = models.CharField(max_length=50)
@@ -40,22 +40,12 @@ class Content(models.Model):
     producer = models.CharField(max_length=50)
     format = models.CharField(max_length=50)
     note_1 = models.IntegerField()
-    # note_number_1 = models.IntegerField()
     note_2 = models.IntegerField()
-    # note_number_2 = models.IntegerField()
     note_3 = models.IntegerField()
-    # note_number_3 = models.IntegerField()
-    # hostin = models.CharField(max_length=50)
-    # thumbnai = models.CharField(max_length=50)
     video_number = models.IntegerField()
-    # dvd = models.CharField(max_length=255)
-    # vod = models.CharField(max_length=255)
     crowdfunding = models.CharField(max_length=255)
     tag = models.CharField(max_length=512)
     season_size = models.CharField(max_length=50)
-    # rss = models.CharField(max_length=255)
-    # start_date = models.DateField()
-    # end_date = models.DateField()
 
     class Meta:
         managed = False
@@ -72,37 +62,35 @@ class ImagoInfoCreator(models.Model):
         managed = False
         db_table = 'imago_info_creator'
 
-class Media(models.Model):
+class ImagoInfoVideo(models.Model):
     class Meta:
         managed = False
         db_table = 'imago_info_video'
 
     type = models.CharField(max_length=50)
     content_id = models.CharField(max_length=255)
-    # section_id = models.CharField(max_length=50)
-    episode_number = models.CharField(db_column="episod_id", max_length=50)
-    hosted_by = models.CharField(db_column="hosting", max_length=50)
-    # teaser = models.IntegerField()
+    episod_id = models.CharField(max_length=50)
+    hosting = models.CharField(max_length=50)
     thumbnail = models.CharField(max_length=50)
-    # youtube_id = models.CharField(max_length=255)
-    # vimeo_id = models.CharField(max_length=255)
-    # dailymotion_id = models.CharField(max_length=255)
-    # peertube_id = models.CharField(max_length=255)
-    # wetube_id = models.CharField(max_length=255)
-    # arte_id = models.CharField(max_length=255)
-    # ftv_id = models.CharField(max_length=255)
-    # tv5monde_id = models.CharField(max_length=255)
-    # facebook_id = models.CharField(max_length=255)
-    # soundcloud_id = models.CharField(max_length=255)
-    # podcloud_id = models.CharField(max_length=255)
-    # ausha_id = models.CharField(max_length=255)
-    # pippa_id = models.CharField(max_length=255)
-    # infomaniak_id = models.CharField(max_length=255)
-    # anchor_id = models.CharField(max_length=255)
-    # radio_france_id = models.CharField(max_length=255)
-    # reporterre_id = models.CharField(max_length=255)
-    # thinkerview_id = models.CharField(max_length=255)
-    # imago_id = models.CharField(max_length=255)
+    youtube_id = models.CharField(max_length=255)
+    vimeo_id = models.CharField(max_length=255)
+    dailymotion_id = models.CharField(max_length=255)
+    peertube_id = models.CharField(max_length=255)
+    wetube_id = models.CharField(max_length=255)
+    arte_id = models.CharField(max_length=255)
+    ftv_id = models.CharField(max_length=255)
+    tv5monde_id = models.CharField(max_length=255)
+    facebook_id = models.CharField(max_length=255)
+    soundcloud_id = models.CharField(max_length=255)
+    podcloud_id = models.CharField(max_length=255)
+    ausha_id = models.CharField(max_length=255)
+    pippa_id = models.CharField(max_length=255)
+    infomaniak_id = models.CharField(max_length=255)
+    anchor_id = models.CharField(max_length=255)
+    radio_france_id = models.CharField(max_length=255)
+    reporterre_id = models.CharField(max_length=255)
+    thinkerview_id = models.CharField(max_length=255)
+    imago_id = models.CharField(max_length=255)
     audio_id = models.CharField(max_length=255)
     embed_id = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
