@@ -78,7 +78,7 @@ class Media(models.Model):
         db_table = 'imago_info_video'
 
     type = models.CharField(max_length=50)
-    content = models.CharField(db_column="content_id", max_length=255)
+    content_id = models.CharField(max_length=255)
     # section_id = models.CharField(max_length=50)
     episode_number = models.CharField(db_column="episod_id", max_length=50)
     hosted_by = models.CharField(db_column="hosting", max_length=50)

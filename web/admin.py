@@ -4,7 +4,7 @@ from .models import Content
 from .models import Media
 
 class MediaAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'content', 'episode_number')
+    list_display = ('id', 'content_id', 'episode_number', 'title')
 
 admin.site.register(Media, MediaAdmin)
 
