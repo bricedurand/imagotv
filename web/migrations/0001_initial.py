@@ -54,6 +54,7 @@ class Migration(migrations.Migration):
                 ('short_description', models.CharField(max_length=50)),
                 ('description', models.CharField(max_length=1024)),
                 ('link', models.CharField(max_length=255)),
+                ('source_id', models.CharField(max_length=50)),
                 ('date', models.IntegerField()),
                 ('duration', models.IntegerField()),
                 ('category', models.CharField(max_length=50)),
