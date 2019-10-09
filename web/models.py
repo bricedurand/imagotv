@@ -70,8 +70,10 @@ class ImagoInfoVideo(models.Model):
 
     type = models.CharField(max_length=50)
     content_id = models.CharField(max_length=255)
+    section_id = models.CharField(max_length=50, default='')
     episod_id = models.CharField(max_length=50)
     hosting = models.CharField(max_length=50)
+    teaser = models.IntegerField(default=0)
     thumbnail = models.CharField(max_length=50)
     youtube_id = models.CharField(max_length=255)
     vimeo_id = models.CharField(max_length=255)
@@ -97,14 +99,14 @@ class ImagoInfoVideo(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=1024)
     duration = models.IntegerField()
-    start_time = models.IntegerField()
-    end_time = models.IntegerField()
+    start_time = models.IntegerField(default=0)
+    end_time = models.IntegerField(default=0)
     documentary_type = models.CharField(max_length=50)
     publication_date = models.DateTimeField()
     fact_check = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.title
+        return self.title + ", duration : " + str(self.duration) + ", publication_date : " + self.publication_date.strftime("%Y-%m-%d %H:%M:%S")
 
 class ImagoListMember(models.Model):
     first_name = models.CharField(max_length=50)
